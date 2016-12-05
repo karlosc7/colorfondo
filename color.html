@@ -6,14 +6,19 @@
     <script>
         function cambiarFondo() {
             var color;
-            color = document.formulario.radio
+            if (document.formulario.radio[0].checked)
+            color=document.formulario.radio[0].value;
+            else if(document.formulario.radio[1].checked)
+            color=document.formulario.radio[1].value;
+            else color=document.formulario.radio[2].value;
+        document.body.style.background=color;
         }
         </script>
 </head>
 <body>
     <br name="formulario">
         Color:</br>
-        <input type="radio" name="radio" value="red">Rojo</br>
+        <input type="radio" name="radio" value="red" checked="true">Rojo</br>
         <input type="radio" name="radio" value="blue">Azul</br>
         <input type="radio" name="radio" value="green">Verde</br>
         <input type="button" value="cambiar" onclick="CambiarFondo();">
